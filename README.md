@@ -9,6 +9,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/nshrhm/fukuroi-llm-analysis)](https://github.com/nshrhm/fukuroi-llm-analysis)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nshrhm/fukuroi-llm-analysis)](https://github.com/nshrhm/fukuroi-llm-analysis)
 [![GitHub top language](https://img.shields.io/github/languages/top/nshrhm/fukuroi-llm-analysis)](https://github.com/nshrhm/fukuroi-llm-analysis)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macOS-lightgrey)
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-required-lightgrey)
