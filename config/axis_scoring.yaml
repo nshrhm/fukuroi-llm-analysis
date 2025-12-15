@@ -1,0 +1,325 @@
+version: 1
+
+# 10 axes for Fukuroi tourism texts (bipolar, [-100, 100])
+# -100 = left side is strongly expressed
+#    0 = neutral / not inferable
+# +100 = right side is strongly expressed
+axes:
+  - id: a1
+    name: 落ち着いた—活気がある
+    left_label: 落ち着いた
+    right_label: 活気がある
+    left_desc: 静けさ/癒し/余白/静的
+    right_desc: 賑わい/イベント/熱量/動的
+
+  - id: a2
+    name: 伝統的—現代的
+    left_label: 伝統的
+    right_label: 現代的
+    left_desc: 寺社・歴史・文化財・郷土
+    right_desc: 現代施設/スポーツ・アリーナ/カフェ等の新しさ
+
+  - id: a3
+    name: 自然志向—都市/施設志向
+    left_label: 自然志向
+    right_label: 都市/施設志向
+    left_desc: 海・里山・公園・景観・散策
+    right_desc: 駅周辺・屋内施設・ミュージアム/買い物等
+
+  - id: a4
+    name: ゆったり滞在—アクティブ回遊
+    left_label: ゆったり滞在
+    right_label: アクティブ回遊
+    left_desc: 滞在価値/休憩・温泉・“過ごす”提案
+    right_desc: 複数スポットの導線/はしご/モデルコース
+
+  - id: a5
+    name: 家族向け—大人向け
+    left_label: 家族向け
+    right_label: 大人向け
+    left_desc: 親子/子ども/遊び・体験・安全配慮
+    right_desc: 夫婦・カップル/静かな嗜好/ご褒美感
+
+  - id: a6
+    name: 日本らしい—国際的/多文化フレンドリー
+    left_label: 日本らしい
+    right_label: 国際的/多文化フレンドリー
+    left_desc: 和・寺社・和食・作法/郷土性
+    right_desc: 英語/多言語表記、食制限、訪日客前提の書き方
+
+  - id: a7
+    name: 宿泊/滞在向き—日帰り向き
+    left_label: 宿泊/滞在向き
+    right_label: 日帰り向き
+    left_desc: 1泊2日・連泊・夜の過ごし方
+    right_desc: 半日/1日で完結、起点駅・所要で圧縮
+
+  - id: a8
+    name: 食の訴求弱—食の訴求強
+    left_label: 食の訴求弱
+    right_label: 食の訴求強
+    left_desc: 食が脇役/一般論
+    right_desc: 名物名・店/食べ方/食体験が主役
+
+  - id: a9
+    name: 季節感弱—季節感強
+    left_label: 季節感弱
+    right_label: 季節感強
+    left_desc: 通年一般論
+    right_desc: 春夏秋冬・桜/紅葉等・旬・時期限定
+
+  - id: a10
+    name: 行動の具体性低—高
+    left_label: 行動の具体性低
+    right_label: 行動の具体性高
+    left_desc: 抽象的おすすめ中心
+    right_desc: アクセス手段、所要時間、料金目安、順路、混雑回避の書き方
+
+# Baseline rule/dictionary for all methods (common reference)
+dictionary:
+  weights:
+    keyword_present: 1.0
+    regex_present: 1.25
+
+  a1:
+    left_keywords:
+      - 静か
+      - 落ち着
+      - のんびり
+      - ゆったり
+      - 癒し
+      - 穏やか
+      - ゆっくり
+      - ほっと
+      - リラックス
+      - 余白
+    right_keywords:
+      - にぎやか
+      - 賑やか
+      - 活気
+      - 盛り上が
+      - イベント
+      - 祭
+      - 花火
+      - ライブ
+      - 熱気
+
+  a2:
+    left_keywords:
+      - 寺
+      - 神社
+      - 古刹
+      - 歴史
+      - 江戸
+      - 宿場
+      - 東海道
+      - 文化財
+      - 郷土
+      - 参道
+      - ご利益
+      - 名刹
+      - 遠州三山
+      - 法多山
+      - 可睡斎
+      - 油山寺
+    right_keywords:
+      - カフェ
+      - インスタ
+      - SNS
+      - ショッピング
+      - アリーナ
+      - スタジアム
+      - スポーツ
+      - 体験施設
+      - ミュージアム
+      - 近代
+      - 最新
+
+  a3:
+    left_keywords:
+      - 自然
+      - 海
+      - 浜
+      - 山
+      - 里山
+      - 公園
+      - 田園
+      - 茶畑
+      - 森
+      - 散策
+      - 花
+      - 景色
+      - 川
+      - 夕日
+    right_keywords:
+      - 駅
+      - 市街地
+      - 商店街
+      - 施設
+      - ホール
+      - アリーナ
+      - スタジアム
+      - 資料館
+      - 博物館
+      - 買い物
+      - レジャー
+
+  a4:
+    left_keywords:
+      - 滞在
+      - 連泊
+      - 宿泊
+      - ホテル
+      - 旅館
+      - 温泉
+      - 休憩
+      - カフェで
+      - ゆったり
+      - のんびり
+      - 過ごす
+    right_keywords:
+      - めぐり
+      - 巡り
+      - 回遊
+      - はしご
+      - モデルコース
+      - ルート
+      - 次に
+      - その後
+      - 午前
+      - 午後
+
+  a5:
+    left_keywords:
+      - 家族
+      - 親子
+      - 子ども
+      - 子供
+      - キッズ
+      - 体験
+      - 遊具
+      - ベビーカー
+      - 安全
+    right_keywords:
+      - 大人
+      - 夫婦
+      - カップル
+      - デート
+      - しっとり
+      - ご褒美
+      - 落ち着いた時間
+
+  a6:
+    left_keywords:
+      - 和
+      - 和食
+      - 抹茶
+      - 神社
+      - 寺
+      - 畳
+      - 着物
+      - 日本文化
+      - 伝統
+      - 郷土料理
+    right_keywords:
+      - 英語
+      - 多言語
+      - インバウンド
+      - 外国人
+      - 海外
+      - ハラール
+      - halal
+      - ヴィーガン
+      - vegan
+      - 多文化
+
+  a7:
+    left_keywords:
+      - 1泊
+      - ２日
+      - 2日
+      - 二日
+      - 連泊
+      - 宿泊
+      - 旅館
+      - ホテル
+      - 温泉
+      - 夜
+    right_keywords:
+      - 日帰り
+      - 半日
+      - 1日
+      - 一日
+      - 週末
+      - アクセス良好
+      - 駅近
+      - すぐ
+
+  a8:
+    left_keywords:
+      - 散策
+      - 景色
+      - 歴史
+      - 癒し
+    right_keywords:
+      - グルメ
+      - ランチ
+      - 名物
+      - 郷土料理
+      - 厄除けだんご
+      - だんご
+      - メロン
+      - クラウンメロン
+      - たまごふわふわ
+      - 海鮮
+      - 海鮮丼
+      - うなぎ
+      - スイーツ
+      - お土産
+
+  a9:
+    left_keywords:
+      - いつでも
+      - 通年
+      - 年中
+    right_keywords:
+      - 春
+      - 夏
+      - 秋
+      - 冬
+      - 桜
+      - 紅葉
+      - 花火
+      - 新緑
+      - 旬
+      - 期間限定
+      - ぼたん
+      - 牡丹
+
+  a10:
+    left_keywords:
+      - おすすめ
+      - ぜひ
+      - 楽しめます
+      - 魅力
+      - 感じられます
+    right_keywords:
+      - アクセス
+      - 所要
+      - 徒歩
+      - バス
+      - タクシー
+      - 車で
+      - 東名
+      - IC
+      - 駐車場
+      - 料金
+      - 入場
+      - 予約
+      - 混雑
+      - 回避
+    right_regex:
+      # time / money / distance patterns
+      - "(?:[0-9０-９]{1,3})\\s*(?:分|時間|h|H)"
+      - "(?:[0-9０-９]{1,6})\\s*(?:円|¥)"
+      - "(?:徒歩|車で|バスで|タクシーで)\\s*(?:[0-9０-９]{1,3})\\s*(?:分|時間)"

@@ -1,0 +1,58 @@
+project:
+  name: fukuroi_llm_tourism
+  seed: 42
+
+paths:
+  input_csv: data/raw/fukuroi_llm_outputs.csv
+  processed_csv: data/processed/cleaned.csv
+
+  embedding_npz: outputs/embeddings/embeddings.npz
+  umap_csv: outputs/umap/umap_2d.csv
+  cluster_csv: outputs/clusters/clusters.csv
+
+  figures_dir: outputs/figures
+
+text:
+  text_column: response
+  # あると嬉しい列（無くても動く）。クラスタや図の色分けに使う
+  optional_meta_columns:
+    - model_name
+    - persona_name
+    - travel_type_name
+    - spot_name
+    - place_name
+
+embedding:
+  backend: sentence_transformers
+  model_name: intfloat/multilingual-e5-large
+  batch_size: 32
+  device: auto          # auto | cpu | cuda
+  normalize: true
+  e5_prefix: "passage: "
+
+umap:
+  n_components: 2
+  n_neighbors: 20
+  min_dist: 0.10
+  metric: cosine
+  random_state: 42
+
+cluster:
+  method: hdbscan       # hdbscan | kmeans
+  hdbscan:
+    min_cluster_size: 10
+    min_samples: 5
+    metric: euclidean   # 正規化済み埋め込みなら概ねOK
+  kmeans:
+    k_min: 2
+    k_max: 20
+    random_state: 42
+
+plots:
+  format: pdf           # pdf 推奨（論文向け）
+  dpi: 300
+  color_by_priority:
+    - travel_type_name
+    - persona_name
+    - model_name
+  japanese_font: true   # 日本語表示が必要なら true（環境側にフォント要）
