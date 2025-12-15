@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "fukuroi-llm-analysis"
+type: software
+authors:
+  - name: "nshrhm"
+repository-code: "https://github.com/nshrhm/fukuroi-llm-analysis"
+url: "https://github.com/nshrhm/fukuroi-llm-analysis"
+license: "CC-BY-4.0"
+keywords:
+  - "LLM"
+  - "tourism"
+  - "text analysis"
+  - "Japanese"
+  - "embeddings"
+  - "UMAP"
+  - "clustering"
+  - "kansei"

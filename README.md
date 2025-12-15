@@ -18,6 +18,14 @@
 
 データ生成（LLM生成観光案内文の作成）は別リポジトリ `llm-tourism` を利用しています: https://github.com/nshrhm/llm-tourism
 
+## Quick Links
+
+- 実験マニュアル: `docs/EXPERIMENT_MANUAL.md`
+- 構成説明: `docs/REPO_STRUCTURE.md`
+- `axis_scores.csv` 列説明: `docs/AXIS_SCORES_COLUMNS.md`
+- GitHub運用チェック: `docs/GITHUB_UPLOAD_CHECKLIST.md`
+- リリース/バージョン: `CHANGELOG.md`
+
 ## 何ができるか（成果物）
 
 - 文書埋め込みの作成: `outputs/embeddings/embeddings.npz`
@@ -59,6 +67,14 @@ OpenRouter を利用します。`.env` に `OPENROUTER_API_KEY` を設定して�
 OPENROUTER_MODEL=openai/gpt-4.1-mini make axis_judge
 make axis_embed
 ```
+
+## License
+
+このリポジトリは `LICENSE` に記載の通り CC BY 4.0 です。
+
+## Citation
+
+研究で参照する場合は `CITATION.cff` を参照してください。
 
 ## 設定ファイル
 
