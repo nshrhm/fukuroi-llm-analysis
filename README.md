@@ -15,6 +15,8 @@
 
 袋井市の観光案内文（LLM生成テキスト）を対象に、埋め込み・可視化・クラスタリング、および 10軸（形容詞対）によるスコアリング（LLM採点 / 埋め込み投影）を行うための実験用リポジトリです。
 
+データ生成（LLM生成観光案内文の作成）は別リポジトリ `llm-tourism` を利用しています: https://github.com/nshrhm/llm-tourism
+
 ## 何ができるか（成果物）
 
 - 文書埋め込みの作成: `outputs/embeddings/embeddings.npz`

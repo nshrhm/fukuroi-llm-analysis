@@ -12,6 +12,9 @@
 
 ## 1. データの準備
 
+このリポジトリは「分析（analysis）」側で、LLM生成データの作成（generation）は別リポジトリで行う想定です:
+https://github.com/nshrhm/llm-tourism
+
 ### 入力CSVの置き場所
 
 - 既定の入力: `data/raw/fukuroi_llm_outputs.csv`
@@ -164,4 +167,3 @@ OPENROUTER_MODEL=anthropic/claude-3.5-sonnet make axis_judge
 - `judge_*` は「意味理解を含む」採点が期待できる一方、モデル依存・コスト/レイテンシがあります。
 - `embed_*` は「ネット不要で再現性が高い」一方、軸方向の作り方（アンカー選定）に設計判断があります。
 - そこで両方を同じ10軸で数値化し、相関・差分・外れ事例を分析できるようにしています。
-
